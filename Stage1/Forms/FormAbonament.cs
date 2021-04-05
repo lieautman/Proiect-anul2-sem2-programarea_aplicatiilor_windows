@@ -17,16 +17,17 @@ namespace AbonatiTelefonici
     {
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
         string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
-        string extraOptiunePath = Directory.GetCurrentDirectory() + "/ExtraoptiuneDB.dat";
+        string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
         public FormAbonament()
         {
             InitializeComponent();
 
-            //iau NrOrdineClient din fisier
+
             if (File.Exists(clientPath))
             {
 
                 //citit din fisier si setat text
+                //pt id client adus in combo box
                 using (StreamReader readtext = new StreamReader(clientPath))
                 {
                     string linie;
@@ -52,11 +53,10 @@ namespace AbonatiTelefonici
                 cbNrOrdineClient.Text = "Nu avem clienti in baza de date!";
             }
 
-
-
             if (File.Exists(abonamentPath))
             {
                 //citit din fisier si setat text
+                //pt id abonament incrementat automat
                 using (StreamReader readtext = new StreamReader(abonamentPath))
                 {
                     string linie;
@@ -72,16 +72,44 @@ namespace AbonatiTelefonici
             {
                 tbNrOrdineAbonament.Text = 1.ToString();
             }
+
+            if (File.Exists(tipAbonamentPath))
+            {
+
+                //citit din fisier si setat text
+                //pt tip abonament adus in combo box
+                using (StreamReader readtext = new StreamReader(tipAbonamentPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    int[] itemeBuffer = new int[Constants.NrMaxElemBd];
+                    int i = 0;
+                    while (linie != null)
+                    {
+                        itemeBuffer[i] = Int32.Parse(linie.Substring(0, 1));
+                        linie = readtext.ReadLine();
+                        i++;
+                    }
+                    int[] iteme = new int[i];
+                    for (int j = 0; j < Constants.NrMaxElemBd; j++)
+                        if (itemeBuffer[j] != 0)
+                            iteme[j] = itemeBuffer[j];
+
+                    cbTipAbonament.DataSource = iteme;
+                }
+            }
+            else
+            {
+                cbTipAbonament.Text = "Nu avem tip abonament in baza de date!";
+            }
+
         }
 
 
-        //creez clasa si formular
         private void btnDisplayCategorii_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Abonament0:nelimitat minute, 1000 measaje, nelimitat Gb internet -> 20lei/luna\n" +
-                            "Abonament1:10000 minute, 1000 measaje, nelimitat Gb internet -> 15lei/luna\n" +
-                            "Abonament2:10000 minute, 100 measaje, 30 Gb internet -> 10lei/luna\n" +
-                            "Abonament3:1000 minute, 100 measaje, 10 Gb internet -> 5lei/luna");
+            BdTipAbonament frm = new BdTipAbonament();
+            frm.ShowDialog();
         }
 
         private void btnSalvareClient_Click(object sender, EventArgs e)
@@ -124,51 +152,6 @@ namespace AbonatiTelefonici
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-        private void btnDisplayBDClient_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(clientPath))
-            {
-                BdClienti frm = new BdClienti();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd clienti!");
-            }
-        }
-
-        private void btnDisplayBDAbonament_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(abonamentPath))
-            {
-                BdAbonament frm = new BdAbonament();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd abonament!");
-            }
-        }
-
-        private void btnDisplayBDExtraOptiune_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(extraOptiunePath))
-            {
-                BdExtraOptiune frm = new BdExtraOptiune();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd extra optiune!");
             }
         }
     }

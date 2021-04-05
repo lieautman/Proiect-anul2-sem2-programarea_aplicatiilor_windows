@@ -48,5 +48,37 @@ namespace AbonatiTelefonici
             frm.ShowDialog();
             this.Show();
         }
+
+        private void clientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BdClienti frm = new BdClienti();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void abonamentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BdAbonament frm = new BdAbonament();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void extraOptiuniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BdExtraOptiune frm = new BdExtraOptiune();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void tipAbonamentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BdTipAbonament frm = new BdTipAbonament();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -46,22 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbForms\BdAbonament.cs">
+    <Compile Include="BdForms\AfisareBd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DbForms\BdAbonament.Designer.cs">
+    <Compile Include="BdForms\AfisareBd.Designer.cs">
+      <DependentUpon>AfisareBd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BdForms\BdTipAbonament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BdForms\BdTipAbonament.Designer.cs">
+      <DependentUpon>BdTipAbonament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BdForms\BdAbonament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BdForms\BdAbonament.Designer.cs">
       <DependentUpon>BdAbonament.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbForms\BdClienti.cs">
+    <Compile Include="BdForms\BdClienti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DbForms\BdClienti.Designer.cs">
+    <Compile Include="BdForms\BdClienti.Designer.cs">
       <DependentUpon>BdClienti.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbForms\BdExtraOptiune.cs">
+    <Compile Include="BdForms\BdExtraOptiune.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DbForms\BdExtraOptiune.Designer.cs">
+    <Compile Include="BdForms\BdExtraOptiune.Designer.cs">
       <DependentUpon>BdExtraOptiune.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Client.cs" />
@@ -100,13 +112,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Abonament.cs" />
     <Compile Include="Classes\TipAbonament.cs" />
-    <EmbeddedResource Include="DbForms\BdAbonament.resx">
+    <EmbeddedResource Include="BdForms\AfisareBd.resx">
+      <DependentUpon>AfisareBd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BdForms\BdTipAbonament.resx">
+      <DependentUpon>BdTipAbonament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BdForms\BdAbonament.resx">
       <DependentUpon>BdAbonament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DbForms\BdClienti.resx">
+    <EmbeddedResource Include="BdForms\BdClienti.resx">
       <DependentUpon>BdClienti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DbForms\BdExtraOptiune.resx">
+    <EmbeddedResource Include="BdForms\BdExtraOptiune.resx">
       <DependentUpon>BdExtraOptiune.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAbonament.resx">

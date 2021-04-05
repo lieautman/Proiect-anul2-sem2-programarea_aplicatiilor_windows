@@ -16,8 +16,6 @@ namespace AbonatiTelefonici
     public partial class FormClient : Form
     {
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
-        string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
-        string extraOptiunePath = Directory.GetCurrentDirectory() + "/ExtraoptiuneDB.dat";
         public FormClient()
         {
             InitializeComponent();
@@ -88,51 +86,6 @@ namespace AbonatiTelefonici
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-        private void btnDisplayBDClient_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(clientPath))
-            {
-                BdClienti frm = new BdClienti();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd clienti!");
-            }
-        }
-
-        private void btnDisplayBDAbonament_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(abonamentPath))
-            {
-                BdAbonament frm = new BdAbonament();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd abonament!");
-            }
-        }
-
-        private void btnDisplayBDExtraOptiune_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(extraOptiunePath))
-            {
-                BdExtraOptiune frm = new BdExtraOptiune();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Nu avem Bd extra optiune!");
             }
         }
     }

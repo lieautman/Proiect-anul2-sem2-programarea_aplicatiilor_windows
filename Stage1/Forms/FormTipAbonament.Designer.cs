@@ -37,10 +37,12 @@ namespace AbonatiTelefonici
             this.labelNrMesaje = new System.Windows.Forms.Label();
             this.labelNrMinute = new System.Windows.Forms.Label();
             this.labelNrGbInternet = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.tbNrMesaje = new System.Windows.Forms.TextBox();
+            this.tbNrMinute = new System.Windows.Forms.TextBox();
+            this.tbNrGbInternet = new System.Windows.Forms.TextBox();
+            this.btnSalvareTipAbonament = new System.Windows.Forms.Button();
+            this.labelPretLunar = new System.Windows.Forms.Label();
+            this.tbPretLunar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +88,7 @@ namespace AbonatiTelefonici
             // labelNrMinute
             // 
             this.labelNrMinute.AutoSize = true;
-            this.labelNrMinute.Location = new System.Drawing.Point(57, 198);
+            this.labelNrMinute.Location = new System.Drawing.Point(54, 198);
             this.labelNrMinute.Name = "labelNrMinute";
             this.labelNrMinute.Size = new System.Drawing.Size(96, 17);
             this.labelNrMinute.TabIndex = 31;
@@ -95,52 +97,70 @@ namespace AbonatiTelefonici
             // labelNrGbInternet
             // 
             this.labelNrGbInternet.AutoSize = true;
-            this.labelNrGbInternet.Location = new System.Drawing.Point(60, 249);
+            this.labelNrGbInternet.Location = new System.Drawing.Point(54, 251);
             this.labelNrGbInternet.Name = "labelNrGbInternet";
             this.labelNrGbInternet.Size = new System.Drawing.Size(125, 17);
             this.labelNrGbInternet.TabIndex = 32;
             this.labelNrGbInternet.Text = "Numar Gb internet";
             // 
-            // textBox1
+            // tbNrMesaje
             // 
-            this.textBox1.Location = new System.Drawing.Point(295, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 22);
-            this.textBox1.TabIndex = 33;
+            this.tbNrMesaje.Location = new System.Drawing.Point(295, 146);
+            this.tbNrMesaje.Name = "tbNrMesaje";
+            this.tbNrMesaje.Size = new System.Drawing.Size(131, 22);
+            this.tbNrMesaje.TabIndex = 33;
             // 
-            // textBox2
+            // tbNrMinute
             // 
-            this.textBox2.Location = new System.Drawing.Point(295, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 22);
-            this.textBox2.TabIndex = 34;
+            this.tbNrMinute.Location = new System.Drawing.Point(295, 195);
+            this.tbNrMinute.Name = "tbNrMinute";
+            this.tbNrMinute.Size = new System.Drawing.Size(131, 22);
+            this.tbNrMinute.TabIndex = 34;
             // 
-            // textBox3
+            // tbNrGbInternet
             // 
-            this.textBox3.Location = new System.Drawing.Point(295, 246);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 22);
-            this.textBox3.TabIndex = 35;
+            this.tbNrGbInternet.Location = new System.Drawing.Point(295, 246);
+            this.tbNrGbInternet.Name = "tbNrGbInternet";
+            this.tbNrGbInternet.Size = new System.Drawing.Size(131, 22);
+            this.tbNrGbInternet.TabIndex = 35;
             // 
-            // btnSave
+            // btnSalvareTipAbonament
             // 
-            this.btnSave.Location = new System.Drawing.Point(163, 309);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(148, 29);
-            this.btnSave.TabIndex = 36;
-            this.btnSave.Text = "Salveaza";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSalvareTipAbonament.Location = new System.Drawing.Point(156, 349);
+            this.btnSalvareTipAbonament.Name = "btnSalvareTipAbonament";
+            this.btnSalvareTipAbonament.Size = new System.Drawing.Size(148, 29);
+            this.btnSalvareTipAbonament.TabIndex = 36;
+            this.btnSalvareTipAbonament.Text = "Salveaza";
+            this.btnSalvareTipAbonament.UseVisualStyleBackColor = true;
+            this.btnSalvareTipAbonament.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // labelPretLunar
+            // 
+            this.labelPretLunar.AutoSize = true;
+            this.labelPretLunar.Location = new System.Drawing.Point(54, 300);
+            this.labelPretLunar.Name = "labelPretLunar";
+            this.labelPretLunar.Size = new System.Drawing.Size(70, 17);
+            this.labelPretLunar.TabIndex = 37;
+            this.labelPretLunar.Text = "Pret lunar";
+            // 
+            // tbPretLunar
+            // 
+            this.tbPretLunar.Location = new System.Drawing.Point(295, 297);
+            this.tbPretLunar.Name = "tbPretLunar";
+            this.tbPretLunar.Size = new System.Drawing.Size(131, 22);
+            this.tbPretLunar.TabIndex = 38;
             // 
             // FormTipAbonament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 573);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(591, 438);
+            this.Controls.Add(this.tbPretLunar);
+            this.Controls.Add(this.labelPretLunar);
+            this.Controls.Add(this.btnSalvareTipAbonament);
+            this.Controls.Add(this.tbNrGbInternet);
+            this.Controls.Add(this.tbNrMinute);
+            this.Controls.Add(this.tbNrMesaje);
             this.Controls.Add(this.labelNrGbInternet);
             this.Controls.Add(this.labelNrMinute);
             this.Controls.Add(this.labelNrMesaje);
@@ -164,9 +184,11 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Label labelNrMesaje;
         private System.Windows.Forms.Label labelNrGbInternet;
         private System.Windows.Forms.Label labelNrMinute;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox tbNrGbInternet;
+        private System.Windows.Forms.TextBox tbNrMinute;
+        private System.Windows.Forms.TextBox tbNrMesaje;
+        private System.Windows.Forms.Button btnSalvareTipAbonament;
+        private System.Windows.Forms.TextBox tbPretLunar;
+        private System.Windows.Forms.Label labelPretLunar;
     }
 }
