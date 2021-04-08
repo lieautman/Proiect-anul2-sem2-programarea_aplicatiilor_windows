@@ -108,13 +108,16 @@ namespace AbonatiTelefonici
 
         private void btnDisplayCategorii_Click(object sender, EventArgs e)
         {
-            BdTipAbonament frm = new BdTipAbonament();
+            BdTipAbonamentInForm frm = new BdTipAbonamentInForm();
+            this.Hide();
             frm.ShowDialog();
+            cbTipAbonament.Text = frm.tbIdTipAbonament.Text;
+            this.Show();
         }
 
         private void btnSalvareClient_Click(object sender, EventArgs e)
         {
-            if (cbNrOrdineClient.Text == "" || cbTipAbonament.Text=="")
+            if (cbNrOrdineClient.Text == "" || cbTipAbonament.Text == "")
                 epNecompletat.SetError(btnSalvareClient, "Va rugam completati toate campurile!");
             else
             {
