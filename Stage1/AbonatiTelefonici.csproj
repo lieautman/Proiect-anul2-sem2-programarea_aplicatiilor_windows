@@ -76,12 +76,6 @@
     <Compile Include="BdForms\BdExtraOptiune.Designer.cs">
       <DependentUpon>BdExtraOptiune.cs</DependentUpon>
     </Compile>
-    <Compile Include="BdForms\BdTipAbonamentInForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BdForms\BdTipAbonamentInForm.Designer.cs">
-      <DependentUpon>BdTipAbonamentInForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\ExtraOptiune.cs" />
     <Compile Include="Forms\FormAbonament.cs">
@@ -132,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BdForms\BdExtraOptiune.resx">
       <DependentUpon>BdExtraOptiune.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BdForms\BdTipAbonamentInForm.resx">
-      <DependentUpon>BdTipAbonamentInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAbonament.resx">
       <DependentUpon>FormAbonament.cs</DependentUpon>

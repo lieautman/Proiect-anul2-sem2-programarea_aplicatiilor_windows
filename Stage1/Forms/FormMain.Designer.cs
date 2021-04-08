@@ -49,7 +49,7 @@ namespace AbonatiTelefonici
             this.btnClient.Name = "btnClient";
             this.btnClient.Size = new System.Drawing.Size(239, 94);
             this.btnClient.TabIndex = 0;
-            this.btnClient.Text = "Formular Client";
+            this.btnClient.Text = "Formular &Client";
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
@@ -69,7 +69,7 @@ namespace AbonatiTelefonici
             this.btnAbonament.Name = "btnAbonament";
             this.btnAbonament.Size = new System.Drawing.Size(239, 94);
             this.btnAbonament.TabIndex = 2;
-            this.btnAbonament.Text = "Formular Abonament";
+            this.btnAbonament.Text = "Formular &Abonament";
             this.btnAbonament.UseVisualStyleBackColor = true;
             this.btnAbonament.Click += new System.EventHandler(this.btnAbonament_Click);
             // 
@@ -79,7 +79,7 @@ namespace AbonatiTelefonici
             this.btnExtraOptiuni.Name = "btnExtraOptiuni";
             this.btnExtraOptiuni.Size = new System.Drawing.Size(239, 94);
             this.btnExtraOptiuni.TabIndex = 4;
-            this.btnExtraOptiuni.Text = "Formular ExtraOptiuni";
+            this.btnExtraOptiuni.Text = "Formular &ExtraOptiuni";
             this.btnExtraOptiuni.UseVisualStyleBackColor = true;
             this.btnExtraOptiuni.Click += new System.EventHandler(this.btnExtraOptiuni_Click);
             // 
@@ -89,7 +89,7 @@ namespace AbonatiTelefonici
             this.btnTipAbonament.Name = "btnTipAbonament";
             this.btnTipAbonament.Size = new System.Drawing.Size(239, 94);
             this.btnTipAbonament.TabIndex = 5;
-            this.btnTipAbonament.Text = "Formular Tip Abonament";
+            this.btnTipAbonament.Text = "Formular &Tip Abonament";
             this.btnTipAbonament.UseVisualStyleBackColor = true;
             this.btnTipAbonament.Click += new System.EventHandler(this.btnTipAbonament_Click);
             // 
@@ -118,28 +118,28 @@ namespace AbonatiTelefonici
             // clientToolStripMenuItem
             // 
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.clientToolStripMenuItem.Text = "Client";
             this.clientToolStripMenuItem.Click += new System.EventHandler(this.clientToolStripMenuItem_Click);
             // 
             // abonamentToolStripMenuItem
             // 
             this.abonamentToolStripMenuItem.Name = "abonamentToolStripMenuItem";
-            this.abonamentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.abonamentToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.abonamentToolStripMenuItem.Text = "Abonament";
             this.abonamentToolStripMenuItem.Click += new System.EventHandler(this.abonamentToolStripMenuItem_Click);
             // 
             // extraOptiuniToolStripMenuItem
             // 
             this.extraOptiuniToolStripMenuItem.Name = "extraOptiuniToolStripMenuItem";
-            this.extraOptiuniToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.extraOptiuniToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.extraOptiuniToolStripMenuItem.Text = "Extra optiuni";
             this.extraOptiuniToolStripMenuItem.Click += new System.EventHandler(this.extraOptiuniToolStripMenuItem_Click);
             // 
             // tipAbonamentToolStripMenuItem
             // 
             this.tipAbonamentToolStripMenuItem.Name = "tipAbonamentToolStripMenuItem";
-            this.tipAbonamentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tipAbonamentToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.tipAbonamentToolStripMenuItem.Text = "Tip abonament";
             this.tipAbonamentToolStripMenuItem.Click += new System.EventHandler(this.tipAbonamentToolStripMenuItem_Click);
             // 

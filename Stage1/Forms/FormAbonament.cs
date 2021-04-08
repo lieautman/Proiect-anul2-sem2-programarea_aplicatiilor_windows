@@ -108,11 +108,8 @@ namespace AbonatiTelefonici
 
         private void btnDisplayCategorii_Click(object sender, EventArgs e)
         {
-            BdTipAbonamentInForm frm = new BdTipAbonamentInForm();
-            this.Hide();
+            BdTipAbonament frm = new BdTipAbonament();
             frm.ShowDialog();
-            cbTipAbonament.Text = frm.tbIdTipAbonament.Text;
-            this.Show();
         }
 
         private void btnSalvareClient_Click(object sender, EventArgs e)
