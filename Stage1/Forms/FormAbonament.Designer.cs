@@ -40,6 +40,7 @@ namespace AbonatiTelefonici
             this.cbNrOrdineClient = new System.Windows.Forms.ComboBox();
             this.labelNrOrdineAbonament = new System.Windows.Forms.Label();
             this.tbNrOrdineAbonament = new System.Windows.Forms.TextBox();
+            this.labelDisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace AbonatiTelefonici
             // labelNrOrdineClient
             // 
             this.labelNrOrdineClient.AutoSize = true;
-            this.labelNrOrdineClient.Location = new System.Drawing.Point(70, 207);
+            this.labelNrOrdineClient.Location = new System.Drawing.Point(12, 194);
             this.labelNrOrdineClient.Name = "labelNrOrdineClient";
             this.labelNrOrdineClient.Size = new System.Drawing.Size(131, 17);
             this.labelNrOrdineClient.TabIndex = 5;
@@ -64,7 +65,7 @@ namespace AbonatiTelefonici
             // labelTipAbonament
             // 
             this.labelTipAbonament.AutoSize = true;
-            this.labelTipAbonament.Location = new System.Drawing.Point(70, 256);
+            this.labelTipAbonament.Location = new System.Drawing.Point(12, 233);
             this.labelTipAbonament.Name = "labelTipAbonament";
             this.labelTipAbonament.Size = new System.Drawing.Size(137, 17);
             this.labelTipAbonament.TabIndex = 6;
@@ -72,7 +73,7 @@ namespace AbonatiTelefonici
             // 
             // btnDisplayCategorii
             // 
-            this.btnDisplayCategorii.Location = new System.Drawing.Point(145, 423);
+            this.btnDisplayCategorii.Location = new System.Drawing.Point(398, 229);
             this.btnDisplayCategorii.Name = "btnDisplayCategorii";
             this.btnDisplayCategorii.Size = new System.Drawing.Size(214, 25);
             this.btnDisplayCategorii.TabIndex = 7;
@@ -83,14 +84,14 @@ namespace AbonatiTelefonici
             // cbTipAbonament
             // 
             this.cbTipAbonament.FormattingEnabled = true;
-            this.cbTipAbonament.Location = new System.Drawing.Point(318, 253);
+            this.cbTipAbonament.Location = new System.Drawing.Point(227, 230);
             this.cbTipAbonament.Name = "cbTipAbonament";
             this.cbTipAbonament.Size = new System.Drawing.Size(132, 24);
             this.cbTipAbonament.TabIndex = 2;
             // 
             // btnSalvareClient
             // 
-            this.btnSalvareClient.Location = new System.Drawing.Point(205, 344);
+            this.btnSalvareClient.Location = new System.Drawing.Point(125, 288);
             this.btnSalvareClient.Name = "btnSalvareClient";
             this.btnSalvareClient.Size = new System.Drawing.Size(100, 23);
             this.btnSalvareClient.TabIndex = 3;
@@ -105,7 +106,7 @@ namespace AbonatiTelefonici
             // cbNrOrdineClient
             // 
             this.cbNrOrdineClient.FormattingEnabled = true;
-            this.cbNrOrdineClient.Location = new System.Drawing.Point(318, 204);
+            this.cbNrOrdineClient.Location = new System.Drawing.Point(227, 191);
             this.cbNrOrdineClient.Name = "cbNrOrdineClient";
             this.cbNrOrdineClient.Size = new System.Drawing.Size(132, 24);
             this.cbNrOrdineClient.TabIndex = 1;
@@ -113,7 +114,7 @@ namespace AbonatiTelefonici
             // labelNrOrdineAbonament
             // 
             this.labelNrOrdineAbonament.AutoSize = true;
-            this.labelNrOrdineAbonament.Location = new System.Drawing.Point(70, 156);
+            this.labelNrOrdineAbonament.Location = new System.Drawing.Point(12, 156);
             this.labelNrOrdineAbonament.Name = "labelNrOrdineAbonament";
             this.labelNrOrdineAbonament.Size = new System.Drawing.Size(169, 17);
             this.labelNrOrdineAbonament.TabIndex = 27;
@@ -121,17 +122,28 @@ namespace AbonatiTelefonici
             // 
             // tbNrOrdineAbonament
             // 
-            this.tbNrOrdineAbonament.Location = new System.Drawing.Point(318, 153);
+            this.tbNrOrdineAbonament.Location = new System.Drawing.Point(227, 153);
             this.tbNrOrdineAbonament.Name = "tbNrOrdineAbonament";
             this.tbNrOrdineAbonament.ReadOnly = true;
             this.tbNrOrdineAbonament.Size = new System.Drawing.Size(132, 22);
             this.tbNrOrdineAbonament.TabIndex = 0;
             // 
+            // labelDisplay
+            // 
+            this.labelDisplay.AutoSize = true;
+            this.labelDisplay.Location = new System.Drawing.Point(413, 141);
+            this.labelDisplay.Name = "labelDisplay";
+            this.labelDisplay.Size = new System.Drawing.Size(185, 85);
+            this.labelDisplay.TabIndex = 28;
+            this.labelDisplay.Text = "Puteti completa campul:\r\nTipul Abonamentului\r\ndand dublu click pe intrarea\r\ndorit" +
+    "a din tabelul deschis de\r\nbutonul de mai jos!";
+            // 
             // FormAbonament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 525);
+            this.ClientSize = new System.Drawing.Size(659, 525);
+            this.Controls.Add(this.labelDisplay);
             this.Controls.Add(this.tbNrOrdineAbonament);
             this.Controls.Add(this.labelNrOrdineAbonament);
             this.Controls.Add(this.cbNrOrdineClient);
@@ -161,5 +173,6 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.ComboBox cbNrOrdineClient;
         private System.Windows.Forms.TextBox tbNrOrdineAbonament;
         private System.Windows.Forms.Label labelNrOrdineAbonament;
+        private System.Windows.Forms.Label labelDisplay;
     }
 }

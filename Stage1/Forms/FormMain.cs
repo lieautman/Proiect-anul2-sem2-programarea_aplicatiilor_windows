@@ -15,6 +15,7 @@ namespace AbonatiTelefonici
         public FormMain()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnClient_Click(object sender, EventArgs e)
