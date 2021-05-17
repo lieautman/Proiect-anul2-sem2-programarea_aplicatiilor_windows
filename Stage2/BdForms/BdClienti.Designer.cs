@@ -55,6 +55,7 @@ namespace AbonatiTelefonici
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BdClienti";
             this.Text = "BdClienti";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdClienti)).EndInit();
             this.ResumeLayout(false);
 

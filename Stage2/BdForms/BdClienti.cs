@@ -35,9 +35,10 @@ namespace AbonatiTelefonici
                         client.CNP = linieSplit[1];
                         client.nume = linieSplit[2];
                         client.prenume = linieSplit[3];
-                        client.nationalitate = linieSplit[4];
-                        client.plata = linieSplit[5];
-                        listClienti.Add(client);
+                        client.email = linieSplit[4];
+                        client.nationalitate = linieSplit[5];
+                        client.plata = linieSplit[6];
+                        listClienti += client;
 
                         linie = readtext.ReadLine();
 

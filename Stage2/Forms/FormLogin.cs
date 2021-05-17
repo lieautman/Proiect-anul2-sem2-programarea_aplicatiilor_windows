@@ -26,14 +26,14 @@ namespace AbonatiTelefonici
 
         public static byte[] GetHash(string inputString)
         {
-            using (HashAlgorithm algorithm = SHA256.Create())
-                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
+            HashAlgorithm algorithm = SHA256.Create();
+            return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
         public static string GetHashString(string inputString)
         {
             StringBuilder sb = new StringBuilder();
             foreach (byte b in GetHash(inputString))
-                sb.Append(b.ToString("X2"));
+                sb.Append(b.ToString());
 
             return sb.ToString();
         }
@@ -47,11 +47,12 @@ namespace AbonatiTelefonici
                 conexiune.Open();
                 OleDbCommand comanda = new OleDbCommand();
                 comanda.Connection = conexiune;
-                comanda.CommandText = "SELECT parola_hash,tip from conturi where username='"+tbUsername.Text+"'";
+                comanda.CommandText = "SELECT username,parola_hash,tip,nume,prenume,email from conturi where username='"+tbUsername.Text+"'";
 
                 OleDbDataReader reader = comanda.ExecuteReader();
 
                 reader.Read();
+
                 //MessageBox.Show("Parola locala: "+GetHashString(tbParola.Text));
                 //MessageBox.Show("Parola server: "+reader["parola_hash"].ToString());
                 string parola_local = "";
@@ -65,7 +66,6 @@ namespace AbonatiTelefonici
                 //MessageBox.Show("Parola locala cut: " + parola_local);
                 //MessageBox.Show("Parola server cut: " + parola_sever);
 
-
                 if (parola_local != parola_sever)
                 {
                     epNecompletat.SetError(tbParola, "Parola gresita!");
@@ -74,9 +74,15 @@ namespace AbonatiTelefonici
                 }
                 else
                 {
+                    //citire date despre persoana/angajat si creare obiect
+                    Angajat angajat = new Angajat(  reader["nume"].ToString(),
+                                                    reader["prenume"].ToString(), 
+                                                    reader["email"].ToString(), 
+                                                    reader["username"].ToString(), 
+                                                    reader["tip"].ToString());
                     if(reader["tip"].ToString() == "0")
                     {
-                        FormMain frm = new FormMain();
+                        FormMain_Client frm = new FormMain_Client(angajat);
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();
@@ -85,7 +91,7 @@ namespace AbonatiTelefonici
                     }
                     if(reader["tip"].ToString() == "1")
                     {
-                        FormMain_Manager frm = new FormMain_Manager();
+                        FormMain_Manager frm = new FormMain_Manager(angajat);
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();
@@ -94,7 +100,7 @@ namespace AbonatiTelefonici
                     }
                     if (reader["tip"].ToString() == "2")
                     {
-                        FormMain frm = new FormMain();
+                        FormMain_Admin frm = new FormMain_Admin(angajat);
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();
@@ -118,7 +124,6 @@ namespace AbonatiTelefonici
             {
                 conexiune.Close();
             }
-        
         }
 
         private void label3_Click(object sender, EventArgs e)

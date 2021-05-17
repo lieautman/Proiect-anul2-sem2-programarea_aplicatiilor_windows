@@ -20,7 +20,7 @@ namespace AbonatiTelefonici
 
             if (File.Exists(tipAbonamentPath))
             {
-                List<TipAbonament> listAbonament = new List<TipAbonament>();
+                List<TipAbonament> listTipAbonament = new List<TipAbonament>();
                 //citit din fisier si punem in lista
                 using (StreamReader readtext = new StreamReader(tipAbonamentPath))
                 {
@@ -35,14 +35,14 @@ namespace AbonatiTelefonici
                         tipAbonament.NrMesaje = Int32.Parse(linieSplit[2]);
                         tipAbonament.NrGbInternet = Int32.Parse(linieSplit[3]);
                         tipAbonament.Pret = float.Parse(linieSplit[4]);
-                        listAbonament.Add(tipAbonament);
+                        listTipAbonament += tipAbonament;
 
                         linie = readtext.ReadLine();
 
                     }
 
                     //afisam datele in tabel
-                    dgvBdAbonament.DataSource = listAbonament;
+                    dgvBdAbonament.DataSource = listTipAbonament;
                 }
             }
             else

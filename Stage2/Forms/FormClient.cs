@@ -16,10 +16,12 @@ namespace AbonatiTelefonici
     public partial class FormClient : Form
     {
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
-        public FormClient()
+        Angajat angajat_local;
+        public FormClient(Angajat angajat)
         {
             InitializeComponent();
 
+            angajat_local = (Angajat)angajat.Clone();
 
             if (File.Exists(clientPath))
             {
@@ -57,6 +59,7 @@ namespace AbonatiTelefonici
                     client.CNP = tbCNP.Text;
                     client.nume = tbNume.Text;
                     client.prenume = tbPrenume.Text;
+                    client.email = tbEmail.Text;
                     client.nationalitate = cbNationalitate.Text;
                     client.plata = cbPlata.Text;
 
@@ -87,6 +90,11 @@ namespace AbonatiTelefonici
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

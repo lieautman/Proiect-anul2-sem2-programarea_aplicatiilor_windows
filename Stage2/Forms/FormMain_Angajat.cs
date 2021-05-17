@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AbonatiTelefonici
 {
-    public partial class FormMain_Manager : Form
+    public partial class FormMain_Client : Form
     {
         Angajat angajat_local;
-        public FormMain_Manager(Angajat angajat)
+        public FormMain_Client(Angajat angajat)
         {
             InitializeComponent();
             angajat_local = (Angajat)angajat.Clone();
@@ -43,13 +43,14 @@ namespace AbonatiTelefonici
             this.Show();
         }
 
-        private void btnTipAbonament_Click(object sender, EventArgs e)
+/*        private void btnTipAbonament_Click(object sender, EventArgs e)
         {
-            FormTipAbonament frm = new FormTipAbonament(angajat_local);
+            FormTipAbonament frm = new FormTipAbonament();
             this.Hide();
             frm.ShowDialog();
             this.Show();
         }
+
         private void clientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BdClienti frm = new BdClienti();
@@ -80,6 +81,6 @@ namespace AbonatiTelefonici
             this.Hide();
             frm.ShowDialog();
             this.Show();
-        }
+        }*/
     }
 }

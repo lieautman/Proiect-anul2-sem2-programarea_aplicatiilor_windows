@@ -18,10 +18,12 @@ namespace AbonatiTelefonici
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
         string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
         string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
-        public FormAbonament()
+        Angajat angajat_local;
+        public FormAbonament(Angajat angajat)
         {
             InitializeComponent();
 
+            angajat_local = (Angajat)angajat.Clone();
 
             if (File.Exists(clientPath))
             {
@@ -103,16 +105,72 @@ namespace AbonatiTelefonici
                 cbTipAbonament.Text = "Nu avem tip abonament in baza de date!";
             }
 
-        }
+            if (File.Exists(clientPath))
+            {
+                List<Client> listClienti = new List<Client>();
+                //citit din fisier si punem in lista
+                using (StreamReader readtext = new StreamReader(clientPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    while (linie != null)
+                    {
+                        Client client = new Client();
+                        string[] linieSplit = linie.Split(' ');
+                        client.NrOrdine = Int32.Parse(linieSplit[0]);
+                        client.CNP = linieSplit[1];
+                        client.nume = linieSplit[2];
+                        client.prenume = linieSplit[3];
+                        client.email = linieSplit[4];
+                        client.nationalitate = linieSplit[5];
+                        client.plata = linieSplit[6];
+                        listClienti.Add(client);
 
+                        linie = readtext.ReadLine();
 
-        private void btnDisplayCategorii_Click(object sender, EventArgs e)
-        {
-            BdTipAbonamentInForm frm = new BdTipAbonamentInForm();
-            this.Hide();
-            frm.ShowDialog();
-            cbTipAbonament.Text = frm.tbIdTipAbonament.Text;
-            this.Show();
+                    }
+
+                    //afisam datele in tabel
+                    dgvBdClienti.DataSource = listClienti;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu avem Bd clienti!");
+            }
+
+            if (File.Exists(tipAbonamentPath))
+            {
+                List<TipAbonament> listAbonament = new List<TipAbonament>();
+                //citit din fisier si punem in lista
+                using (StreamReader readtext = new StreamReader(tipAbonamentPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    while (linie != null)
+                    {
+                        TipAbonament tipAbonament = new TipAbonament();
+                        string[] linieSplit = linie.Split(' ');
+                        tipAbonament.NrOrdineTipAbonament = Int32.Parse(linieSplit[0]);
+                        tipAbonament.NrMinute = Int32.Parse(linieSplit[1]);
+                        tipAbonament.NrMesaje = Int32.Parse(linieSplit[2]);
+                        tipAbonament.NrGbInternet = Int32.Parse(linieSplit[3]);
+                        tipAbonament.Pret = float.Parse(linieSplit[4]);
+                        listAbonament.Add(tipAbonament);
+
+                        linie = readtext.ReadLine();
+
+                    }
+
+                    //afisam datele in tabel
+                    dgvBdTipAbonament.DataSource = listAbonament;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu avem Bd tip abonamente!");
+            }
+
         }
 
         private void btnSalvareClient_Click(object sender, EventArgs e)
@@ -123,10 +181,10 @@ namespace AbonatiTelefonici
             {
                 try
                 {
-                    Abonament tipAbonament = new Abonament();
-                    tipAbonament.NrOrdineAbonament = Convert.ToInt32(tbNrOrdineAbonament.Text);
-                    tipAbonament.NrOrdineClient = Convert.ToInt32(cbNrOrdineClient.Text);
-                    tipAbonament.Abonamenttip = tipAbonament.stringtoenum(cbTipAbonament.Text);
+                    Abonament Abonament = new Abonament();
+                    Abonament.NrOrdineAbonament = Convert.ToInt32(tbNrOrdineAbonament.Text);
+                    Abonament.NrOrdineClient = Convert.ToInt32(cbNrOrdineClient.Text);
+                    Abonament.AbonamentTip = Abonament.stringtoint(cbTipAbonament.Text);
 
 
 
@@ -134,7 +192,7 @@ namespace AbonatiTelefonici
                     //de scris in fisier
                     using (StreamWriter writetext = new StreamWriter(abonamentPath, true))
                     {
-                        writetext.WriteLine(tipAbonament.ToString());
+                        writetext.WriteLine(Abonament.ToString());
                     }
 
                     MessageBox.Show("Abonamentul clientului cu id-ul " + cbNrOrdineClient.Text + " a fost salvat!");
@@ -156,6 +214,27 @@ namespace AbonatiTelefonici
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void dgvBdAbonament_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvBdTipAbonament.SelectedRows)
+            {
+                cbTipAbonament.Text = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void dgvBdClienti_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvBdClienti.SelectedRows)
+            {
+                cbNrOrdineClient.Text = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

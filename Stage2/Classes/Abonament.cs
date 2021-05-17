@@ -6,42 +6,40 @@ using System.Threading.Tasks;
 
 namespace AbonatiTelefonici
 {
-    enum AbonamentTip
-    {
-        Abonamentul0,
-        Abonamentul1,
-        Abonamentul2,
-        Abonamentul3
-    }
     class Abonament
     {
         public int NrOrdineAbonament { get; set; }
 
         public int NrOrdineClient { get; set; }
         
-        public AbonamentTip Abonamenttip { get; set; }
+        public int AbonamentTip { get; set; }
 
         public Abonament()
         {
             this.NrOrdineAbonament = -1;
             this.NrOrdineClient = -1;
-            this.Abonamenttip = 0;
+            this.AbonamentTip = 0;
         }
-        public Abonament(int NrOrdineAbonament, int NrOrdineClient, AbonamentTip Abonamenttip)
+        public Abonament(int NrOrdineAbonament, int NrOrdineClient, int Abonamenttip)
         {
             this.NrOrdineAbonament = NrOrdineAbonament;
             this.NrOrdineClient = NrOrdineClient;
-            this.Abonamenttip = Abonamenttip;
+            this.AbonamentTip = Abonamenttip;
         }
 
         public override string ToString()
         {
-            return this.NrOrdineAbonament + " " + this.NrOrdineClient + " " + this.Abonamenttip;
+            return this.NrOrdineAbonament + " " + this.NrOrdineClient + " " + this.AbonamentTip;
+        }
+        public static List<Abonament> operator +(List<Abonament> la, Abonament a)
+        {
+            la.Add(a);
+            return la;
         }
 
-        public AbonamentTip stringtoenum(string s)
+        public int stringtoint(string s)
         {
-            AbonamentTip a = (AbonamentTip)Enum.Parse(typeof(AbonamentTip), s);
+            int a = Convert.ToInt32(s);
             return a;
         }
     }

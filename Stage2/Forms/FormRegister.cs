@@ -31,14 +31,14 @@ namespace AbonatiTelefonici
 
         public static byte[] GetHash(string inputString)
         {
-            using (HashAlgorithm algorithm = SHA256.Create())
-                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
+            HashAlgorithm algorithm = SHA256.Create();
+            return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
         public static string GetHashString(string inputString)
         {
             StringBuilder sb = new StringBuilder();
             foreach (byte b in GetHash(inputString))
-                sb.Append(b.ToString("X2"));
+                sb.Append(b.ToString());
 
             return sb.ToString();
         }
@@ -64,13 +64,18 @@ namespace AbonatiTelefonici
                     OleDbCommand comanda = new OleDbCommand();
                     comanda.Connection = conexiune;
 
-                    comanda.CommandText = "INSERT INTO conturi VALUES(?,?,?)";
+                    comanda.CommandText = "INSERT INTO conturi VALUES(?,?,?,?,?,?)";
                     comanda.Parameters.Add("username", OleDbType.Char, 20).Value = tbUsername.Text;
                     comanda.Parameters.Add("parola_hash", OleDbType.Char, 50).Value = GetHashString(tbParola.Text);
                     comanda.Parameters.Add("tip", OleDbType.Integer).Value = 0;
+                    comanda.Parameters.Add("nume", OleDbType.Char, 20).Value = tbNume.Text;
+                    comanda.Parameters.Add("prenume", OleDbType.Char, 20).Value = tbPrenume.Text;
+                    comanda.Parameters.Add("email", OleDbType.Char, 20).Value = tbEmail.Text;
                     comanda.ExecuteNonQuery();
 
                     MessageBox.Show("S-a introdus cu succes!");
+                    tbParola.Clear();
+                    tbParola2.Clear();
                 }
                 catch (Exception ex)
                 {

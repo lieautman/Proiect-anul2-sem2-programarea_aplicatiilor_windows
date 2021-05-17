@@ -34,7 +34,7 @@ namespace AbonatiTelefonici
                         extraOptiune.NrOrdineAbonament = Int32.Parse(linieSplit[1]);
                         extraOptiune.Optiune = extraOptiune.stringtoenum(linieSplit[2]);
                         extraOptiune.Number = Int32.Parse(linieSplit[3]);
-                        listExtraOptiune.Add(extraOptiune);
+                        listExtraOptiune+=extraOptiune;
 
                         linie = readtext.ReadLine();
 

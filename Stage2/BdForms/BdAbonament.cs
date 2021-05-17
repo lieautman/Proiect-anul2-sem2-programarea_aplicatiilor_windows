@@ -34,8 +34,8 @@ namespace AbonatiTelefonici
                         string[] linieSplit = linie.Split(' ');
                         abonament.NrOrdineAbonament = Int32.Parse(linieSplit[0]);
                         abonament.NrOrdineClient = Int32.Parse(linieSplit[1]);
-                        abonament.Abonamenttip = abonament.stringtoenum(linieSplit[2]);
-                        listAbonament.Add(abonament);
+                        abonament.AbonamentTip = abonament.stringtoint(linieSplit[2]);
+                        listAbonament+=abonament;
 
                         linie = readtext.ReadLine();
 

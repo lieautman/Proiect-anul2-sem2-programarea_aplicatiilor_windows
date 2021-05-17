@@ -13,13 +13,18 @@ namespace AbonatiTelefonici
 {
     public partial class FormExtraOptiuni : Form
     {
+        string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
         string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
         string extraOptiunePath = Directory.GetCurrentDirectory() + "/ExtraoptiuneDB.dat";
+        string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
+        Angajat angajat_local;
 
         Control c;
-        public FormExtraOptiuni()
+        public FormExtraOptiuni(Angajat angajat)
         {
             InitializeComponent();
+
+            angajat_local = (Angajat)angajat.Clone();
 
             //iau NrOrdineClient din fisier
             if (File.Exists(abonamentPath))
@@ -51,8 +56,6 @@ namespace AbonatiTelefonici
                 cbNrOrdineAbonament.Text = "Nu avem clienti in baza de date!";
             }
 
-
-
             if (File.Exists(extraOptiunePath))
             {
                 //citit din fisier si setat text
@@ -71,6 +74,103 @@ namespace AbonatiTelefonici
             {
                 tbNrOrdineExtraoptiune.Text = 1.ToString();
             }
+
+            //date data grid view
+            if (File.Exists(clientPath))
+            {
+                List<Client> listClienti = new List<Client>();
+                //citit din fisier si punem in lista
+                using (StreamReader readtext = new StreamReader(clientPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    while (linie != null)
+                    {
+                        Client client = new Client();
+                        string[] linieSplit = linie.Split(' ');
+                        client.NrOrdine = Int32.Parse(linieSplit[0]);
+                        client.CNP = linieSplit[1];
+                        client.nume = linieSplit[2];
+                        client.prenume = linieSplit[3];
+                        client.email = linieSplit[4];
+                        client.nationalitate = linieSplit[5];
+                        client.plata = linieSplit[6];
+                        listClienti.Add(client);
+
+                        linie = readtext.ReadLine();
+
+                    }
+
+                    //afisam datele in tabel
+                    dgvBdClienti.DataSource = listClienti;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu avem Bd clienti!");
+            }
+
+            if (File.Exists(abonamentPath))
+            {
+                List<Abonament> listAbonament = new List<Abonament>();
+                //citit din fisier si punem in lista
+                using (StreamReader readtext = new StreamReader(abonamentPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    while (linie != null)
+                    {
+                        Abonament abonament = new Abonament();
+                        string[] linieSplit = linie.Split(' ');
+                        abonament.NrOrdineAbonament = Int32.Parse(linieSplit[0]);
+                        abonament.NrOrdineClient = Int32.Parse(linieSplit[1]);
+                        abonament.AbonamentTip = Int32.Parse(linieSplit[2]);
+                        listAbonament.Add(abonament);
+
+                        linie = readtext.ReadLine();
+
+                    }
+
+                    //afisam datele in tabel
+                    dgvBdAbonament.DataSource = listAbonament;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu avem Bd abonamente!");
+            }
+
+            if (File.Exists(tipAbonamentPath))
+            {
+                List<TipAbonament> listAbonament = new List<TipAbonament>();
+                //citit din fisier si punem in lista
+                using (StreamReader readtext = new StreamReader(tipAbonamentPath))
+                {
+                    string linie;
+                    linie = readtext.ReadLine();
+                    while (linie != null)
+                    {
+                        TipAbonament tipAbonament = new TipAbonament();
+                        string[] linieSplit = linie.Split(' ');
+                        tipAbonament.NrOrdineTipAbonament = Int32.Parse(linieSplit[0]);
+                        tipAbonament.NrMinute = Int32.Parse(linieSplit[1]);
+                        tipAbonament.NrMesaje = Int32.Parse(linieSplit[2]);
+                        tipAbonament.NrGbInternet = Int32.Parse(linieSplit[3]);
+                        tipAbonament.Pret = float.Parse(linieSplit[4]);
+                        listAbonament.Add(tipAbonament);
+
+                        linie = readtext.ReadLine();
+
+                    }
+
+                    //afisam datele in tabel
+                    dgvBdTipAbonament.DataSource = listAbonament;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu avem Bd tip abonamente!");
+            }
         }
 
         private void cbTipExtraoptiune_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,10 +180,15 @@ namespace AbonatiTelefonici
             labelExtraOptiune1.Text = "Numar " + selectedItem;
         }
 
-        private void btnSalvareClient_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvareExtraOptiune_Click(object sender, EventArgs e)
         {
             if (tbNrOrdineExtraoptiune.Text == "" || cbNrOrdineAbonament.Text == "" || cbTipExtraoptiune.Text == "" || tbExtraOptiuneNumar.Text == "")
-                epNecompletat.SetError(btnSalvareClient, "Va rugam completati toate campurile!");
+                epNecompletat.SetError(btnSalvareExtraOptiune, "Va rugam completati toate campurile!");
             else
             {
                 try
@@ -121,6 +226,8 @@ namespace AbonatiTelefonici
                     MessageBox.Show(ex.Message);
                 }
             }
+
+        
 
         }
     }

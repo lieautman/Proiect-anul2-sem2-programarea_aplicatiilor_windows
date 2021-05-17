@@ -34,5 +34,10 @@ namespace AbonatiTelefonici
         {
             return this.NrOrdineTipAbonament + " " + this.NrMesaje + " " + this.NrMinute + " " + this.NrGbInternet + " " + this.Pret;
         }
+        public static List<TipAbonament> operator +(List<TipAbonament> lta, TipAbonament ta)
+        {
+            lta.Add(ta);
+            return lta;
+        }
     }
 }

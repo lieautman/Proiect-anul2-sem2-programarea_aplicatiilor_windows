@@ -46,34 +46,39 @@ namespace AbonatiTelefonici
             this.labelTitlu = new System.Windows.Forms.Label();
             this.cbPlata = new System.Windows.Forms.ComboBox();
             this.labelPlata = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             this.SuspendLayout();
             // 
             // tbNume
             // 
-            this.tbNume.Location = new System.Drawing.Point(350, 185);
+            this.tbNume.Location = new System.Drawing.Point(334, 200);
             this.tbNume.Name = "tbNume";
-            this.tbNume.Size = new System.Drawing.Size(100, 22);
+            this.tbNume.Size = new System.Drawing.Size(389, 22);
             this.tbNume.TabIndex = 2;
             // 
             // tbPrenume
             // 
-            this.tbPrenume.Location = new System.Drawing.Point(350, 229);
+            this.tbPrenume.Location = new System.Drawing.Point(334, 239);
             this.tbPrenume.Name = "tbPrenume";
-            this.tbPrenume.Size = new System.Drawing.Size(100, 22);
+            this.tbPrenume.Size = new System.Drawing.Size(389, 22);
             this.tbPrenume.TabIndex = 3;
             // 
             // tbCNP
             // 
-            this.tbCNP.Location = new System.Drawing.Point(350, 145);
+            this.tbCNP.Location = new System.Drawing.Point(334, 161);
             this.tbCNP.Name = "tbCNP";
-            this.tbCNP.Size = new System.Drawing.Size(100, 22);
+            this.tbCNP.Size = new System.Drawing.Size(389, 22);
             this.tbCNP.TabIndex = 1;
             // 
             // labelCNP
             // 
+            this.labelCNP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCNP.AutoSize = true;
-            this.labelCNP.Location = new System.Drawing.Point(98, 148);
+            this.labelCNP.Location = new System.Drawing.Point(117, 166);
             this.labelCNP.Name = "labelCNP";
             this.labelCNP.Size = new System.Drawing.Size(36, 17);
             this.labelCNP.TabIndex = 11;
@@ -81,8 +86,10 @@ namespace AbonatiTelefonici
             // 
             // labelNume
             // 
+            this.labelNume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNume.AutoSize = true;
-            this.labelNume.Location = new System.Drawing.Point(98, 188);
+            this.labelNume.Location = new System.Drawing.Point(117, 205);
             this.labelNume.Name = "labelNume";
             this.labelNume.Size = new System.Drawing.Size(45, 17);
             this.labelNume.TabIndex = 12;
@@ -90,8 +97,10 @@ namespace AbonatiTelefonici
             // 
             // labelPrenume
             // 
+            this.labelPrenume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPrenume.AutoSize = true;
-            this.labelPrenume.Location = new System.Drawing.Point(98, 234);
+            this.labelPrenume.Location = new System.Drawing.Point(117, 244);
             this.labelPrenume.Name = "labelPrenume";
             this.labelPrenume.Size = new System.Drawing.Size(65, 17);
             this.labelPrenume.TabIndex = 13;
@@ -99,8 +108,10 @@ namespace AbonatiTelefonici
             // 
             // labelNationalitate
             // 
+            this.labelNationalitate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNationalitate.AutoSize = true;
-            this.labelNationalitate.Location = new System.Drawing.Point(98, 277);
+            this.labelNationalitate.Location = new System.Drawing.Point(117, 322);
             this.labelNationalitate.Name = "labelNationalitate";
             this.labelNationalitate.Size = new System.Drawing.Size(87, 17);
             this.labelNationalitate.TabIndex = 14;
@@ -108,9 +119,11 @@ namespace AbonatiTelefonici
             // 
             // btnSalvareClient
             // 
-            this.btnSalvareClient.Location = new System.Drawing.Point(220, 373);
+            this.btnSalvareClient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvareClient.Location = new System.Drawing.Point(206, 407);
             this.btnSalvareClient.Name = "btnSalvareClient";
-            this.btnSalvareClient.Size = new System.Drawing.Size(100, 23);
+            this.btnSalvareClient.Size = new System.Drawing.Size(389, 48);
             this.btnSalvareClient.TabIndex = 6;
             this.btnSalvareClient.Text = "Salveaza";
             this.btnSalvareClient.UseVisualStyleBackColor = true;
@@ -118,8 +131,10 @@ namespace AbonatiTelefonici
             // 
             // labelNrOrdine
             // 
+            this.labelNrOrdine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNrOrdine.AutoSize = true;
-            this.labelNrOrdine.Location = new System.Drawing.Point(98, 108);
+            this.labelNrOrdine.Location = new System.Drawing.Point(117, 127);
             this.labelNrOrdine.Name = "labelNrOrdine";
             this.labelNrOrdine.Size = new System.Drawing.Size(74, 17);
             this.labelNrOrdine.TabIndex = 10;
@@ -127,10 +142,10 @@ namespace AbonatiTelefonici
             // 
             // tbNrOrdine
             // 
-            this.tbNrOrdine.Location = new System.Drawing.Point(350, 105);
+            this.tbNrOrdine.Location = new System.Drawing.Point(334, 122);
             this.tbNrOrdine.Name = "tbNrOrdine";
             this.tbNrOrdine.ReadOnly = true;
-            this.tbNrOrdine.Size = new System.Drawing.Size(100, 22);
+            this.tbNrOrdine.Size = new System.Drawing.Size(389, 22);
             this.tbNrOrdine.TabIndex = 0;
             // 
             // epNecompletat
@@ -147,16 +162,18 @@ namespace AbonatiTelefonici
             "Serba",
             "Ucrainiana",
             "Ungara"});
-            this.cbNationalitate.Location = new System.Drawing.Point(350, 268);
+            this.cbNationalitate.Location = new System.Drawing.Point(334, 317);
             this.cbNationalitate.Name = "cbNationalitate";
-            this.cbNationalitate.Size = new System.Drawing.Size(100, 24);
+            this.cbNationalitate.Size = new System.Drawing.Size(389, 24);
             this.cbNationalitate.Sorted = true;
             this.cbNationalitate.TabIndex = 4;
             // 
             // labelTitlu
             // 
+            this.labelTitlu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitlu.AutoSize = true;
-            this.labelTitlu.Location = new System.Drawing.Point(164, 50);
+            this.labelTitlu.Location = new System.Drawing.Point(148, 50);
             this.labelTitlu.Name = "labelTitlu";
             this.labelTitlu.Size = new System.Drawing.Size(208, 17);
             this.labelTitlu.TabIndex = 9;
@@ -169,25 +186,59 @@ namespace AbonatiTelefonici
             "Numerar",
             "Card",
             "Ambele"});
-            this.cbPlata.Location = new System.Drawing.Point(350, 317);
+            this.cbPlata.Location = new System.Drawing.Point(334, 358);
             this.cbPlata.Name = "cbPlata";
-            this.cbPlata.Size = new System.Drawing.Size(100, 24);
+            this.cbPlata.Size = new System.Drawing.Size(389, 24);
             this.cbPlata.TabIndex = 5;
             // 
             // labelPlata
             // 
+            this.labelPlata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPlata.AutoSize = true;
-            this.labelPlata.Location = new System.Drawing.Point(98, 323);
+            this.labelPlata.Location = new System.Drawing.Point(117, 361);
             this.labelPlata.Name = "labelPlata";
             this.labelPlata.Size = new System.Drawing.Size(110, 17);
             this.labelPlata.TabIndex = 14;
             this.labelPlata.Text = "Metoda de plata";
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBack.Location = new System.Drawing.Point(576, 461);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(195, 63);
+            this.buttonBack.TabIndex = 40;
+            this.buttonBack.Text = "BACK";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(117, 283);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
+            this.labelEmail.TabIndex = 42;
+            this.labelEmail.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(334, 278);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(389, 22);
+            this.tbEmail.TabIndex = 41;
+            // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 427);
+            this.ClientSize = new System.Drawing.Size(783, 536);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelPlata);
             this.Controls.Add(this.cbPlata);
             this.Controls.Add(this.labelTitlu);
@@ -205,6 +256,7 @@ namespace AbonatiTelefonici
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClient";
             this.Text = "Formular Client";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,6 +280,9 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Label labelTitlu;
         private System.Windows.Forms.Label labelPlata;
         private System.Windows.Forms.ComboBox cbPlata;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.TextBox tbEmail;
     }
 }
 

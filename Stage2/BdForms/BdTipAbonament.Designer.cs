@@ -55,6 +55,7 @@ namespace AbonatiTelefonici
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BdTipAbonament";
             this.Text = "BdTipAbonament";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdAbonament)).EndInit();
             this.ResumeLayout(false);
 

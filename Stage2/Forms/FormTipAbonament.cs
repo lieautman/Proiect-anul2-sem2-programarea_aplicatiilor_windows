@@ -14,10 +14,12 @@ namespace AbonatiTelefonici
     public partial class FormTipAbonament : Form
     {
         string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
-        public FormTipAbonament()
+        Angajat angajat_local;
+        public FormTipAbonament(Angajat angajat)
         {
             InitializeComponent();
 
+            angajat_local = (Angajat)angajat.Clone();
 
             if (File.Exists(tipAbonamentPath))
             {
@@ -82,6 +84,11 @@ namespace AbonatiTelefonici
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

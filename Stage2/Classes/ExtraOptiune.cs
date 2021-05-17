@@ -41,6 +41,11 @@ namespace AbonatiTelefonici
         {
             return this.NrOrdineExtraoptiune + " " + this.NrOrdineAbonament + " " + this.Optiune + " " + this.Number;
         }
+        public static List<ExtraOptiune> operator +(List<ExtraOptiune> leo, ExtraOptiune eo)
+        {
+            leo.Add(eo);
+            return leo;
+        }
 
         public ExtraOptiuneTip stringtoenum(string s)
         {

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AbonatiTelefonici
 {
-    public partial class FormMain_Manager : Form
+    public partial class FormMain_Admin : Form
     {
         Angajat angajat_local;
-        public FormMain_Manager(Angajat angajat)
+        public FormMain_Admin(Angajat angajat)
         {
             InitializeComponent();
             angajat_local = (Angajat)angajat.Clone();
@@ -50,6 +50,7 @@ namespace AbonatiTelefonici
             frm.ShowDialog();
             this.Show();
         }
+
         private void clientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BdClienti frm = new BdClienti();
