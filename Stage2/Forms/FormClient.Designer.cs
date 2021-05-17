@@ -30,6 +30,7 @@ namespace AbonatiTelefonici
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClient));
             this.tbNume = new System.Windows.Forms.TextBox();
             this.tbPrenume = new System.Windows.Forms.TextBox();
             this.tbCNP = new System.Windows.Forms.TextBox();
@@ -201,6 +202,7 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.tbCNP);
             this.Controls.Add(this.tbPrenume);
             this.Controls.Add(this.tbNume);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClient";
             this.Text = "Formular Client";
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).EndInit();

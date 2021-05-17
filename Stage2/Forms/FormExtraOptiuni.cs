@@ -56,7 +56,7 @@ namespace AbonatiTelefonici
             if (File.Exists(extraOptiunePath))
             {
                 //citit din fisier si setat text
-                using (StreamReader readtext = new StreamReader(abonamentPath))
+                using (StreamReader readtext = new StreamReader(extraOptiunePath))
                 {
                     string linie;
                     linie = readtext.ReadLine();

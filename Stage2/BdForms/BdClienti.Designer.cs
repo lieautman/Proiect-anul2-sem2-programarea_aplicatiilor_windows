@@ -29,6 +29,7 @@ namespace AbonatiTelefonici
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BdClienti));
             this.dgvBdClienti = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdClienti)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@ namespace AbonatiTelefonici
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 530);
             this.Controls.Add(this.dgvBdClienti);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BdClienti";
             this.Text = "BdClienti";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdClienti)).EndInit();

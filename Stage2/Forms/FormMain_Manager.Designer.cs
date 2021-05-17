@@ -1,7 +1,7 @@
 ﻿
 namespace AbonatiTelefonici
 {
-    partial class FormMain
+    partial class FormMain_Manager
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace AbonatiTelefonici
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_Manager));
             this.btnClient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAbonament = new System.Windows.Forms.Button();
@@ -145,7 +145,7 @@ namespace AbonatiTelefonici
             this.tipAbonamentToolStripMenuItem.Text = "Tip abonament";
             this.tipAbonamentToolStripMenuItem.Click += new System.EventHandler(this.tipAbonamentToolStripMenuItem_Click);
             // 
-            // FormMain
+            // FormMain_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,8 +159,8 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormMain";
-            this.Text = "FormMain_template";
+            this.Name = "FormMain_Manager";
+            this.Text = "Manager wizard";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

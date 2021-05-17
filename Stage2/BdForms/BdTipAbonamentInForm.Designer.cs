@@ -29,6 +29,7 @@ namespace AbonatiTelefonici
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BdTipAbonamentInForm));
             this.dgvBdAbonament = new System.Windows.Forms.DataGridView();
             this.btnOK = new System.Windows.Forms.Button();
             this.tbIdTipAbonament = new System.Windows.Forms.TextBox();
@@ -114,6 +115,7 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.tbIdTipAbonament);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dgvBdAbonament);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BdTipAbonamentInForm";
             this.Text = "BdTipAbonament";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdAbonament)).EndInit();

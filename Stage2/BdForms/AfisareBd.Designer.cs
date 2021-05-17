@@ -29,6 +29,7 @@ namespace AbonatiTelefonici
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AfisareBd));
             this.btnDisplayBDClient = new System.Windows.Forms.Button();
             this.btnDisplayBDAbonament = new System.Windows.Forms.Button();
             this.btnDisplayBDExtraOptiune = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.btnDisplayBDExtraOptiune);
             this.Controls.Add(this.btnDisplayBDAbonament);
             this.Controls.Add(this.btnDisplayBDClient);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AfisareBd";
             this.Text = "AfisareBd";
             this.ResumeLayout(false);

@@ -30,6 +30,7 @@ namespace AbonatiTelefonici
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTipAbonament));
             this.labelTitlu = new System.Windows.Forms.Label();
             this.epNecompletat = new System.Windows.Forms.ErrorProvider(this.components);
             this.labelNrOrdineTipAbonament = new System.Windows.Forms.Label();
@@ -167,6 +168,7 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.tbNrTipAbonament);
             this.Controls.Add(this.labelNrOrdineTipAbonament);
             this.Controls.Add(this.labelTitlu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTipAbonament";
             this.Text = "FormTipAbonament";
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).EndInit();

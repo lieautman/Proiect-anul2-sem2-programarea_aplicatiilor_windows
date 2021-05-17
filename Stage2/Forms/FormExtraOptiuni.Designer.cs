@@ -30,6 +30,7 @@ namespace AbonatiTelefonici
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExtraOptiuni));
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipExtraoptiune = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -154,6 +155,7 @@ namespace AbonatiTelefonici
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbTipExtraoptiune);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExtraOptiuni";
             this.Text = "FormExtraOptiuni";
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).EndInit();
