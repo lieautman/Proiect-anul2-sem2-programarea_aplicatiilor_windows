@@ -17,6 +17,7 @@ namespace AbonatiTelefonici
         string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
         string extraOptiunePath = Directory.GetCurrentDirectory() + "/ExtraoptiuneDB.dat";
         string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
+        string logFile = Directory.GetCurrentDirectory() + "/LogAngajati.dat";
         Angajat angajat_local;
 
         Control c;
@@ -180,11 +181,6 @@ namespace AbonatiTelefonici
             labelExtraOptiune1.Text = "Numar " + selectedItem;
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnSalvareExtraOptiune_Click(object sender, EventArgs e)
         {
             if (tbNrOrdineExtraoptiune.Text == "" || cbNrOrdineAbonament.Text == "" || cbTipExtraoptiune.Text == "" || tbExtraOptiuneNumar.Text == "")
@@ -204,6 +200,11 @@ namespace AbonatiTelefonici
                     using (StreamWriter writetext = new StreamWriter(extraOptiunePath, true))
                     {
                         writetext.WriteLine(extraOptiune.ToString());
+                    }
+                    //de scris in log
+                    using (StreamWriter writetext = new StreamWriter(logFile, true))
+                    {
+                        writetext.WriteLine(angajat_local.ToString() + " 2 " + extraOptiune.NrOrdineExtraoptiune);//2 reprezinta modelul de formular ce a fost logat
                     }
 
                     MessageBox.Show("Clientul a fost salvat!");
@@ -229,6 +230,23 @@ namespace AbonatiTelefonici
 
         
 
+        }
+
+        private void dgvBdAbonament_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvBdAbonament.SelectedRows)
+            {
+                cbNrOrdineAbonament.Text = row.Cells[0].Value.ToString();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void backButton2_Load(object sender, EventArgs e)
+        {
+            ((Control)sender).Parent = this;
         }
     }
 }

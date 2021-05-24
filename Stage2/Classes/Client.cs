@@ -38,6 +38,11 @@ namespace AbonatiTelefonici
             lc.Add(c);
             return lc;
         }
-
+        //mi-ar trebuii pt a updata datele dar nu am putut sa fac asta
+        public static List<Client> operator -(List<Client> lc, Client c)
+        {
+            lc.Remove(c);
+            return lc;
+        }
     }
 }

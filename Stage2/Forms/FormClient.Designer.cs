@@ -46,9 +46,9 @@ namespace AbonatiTelefonici
             this.labelTitlu = new System.Windows.Forms.Label();
             this.cbPlata = new System.Windows.Forms.ComboBox();
             this.labelPlata = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.labelEmail = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
+            this.backButton2 = new User_Library.BackButton();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +123,7 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvareClient.Location = new System.Drawing.Point(206, 407);
             this.btnSalvareClient.Name = "btnSalvareClient";
-            this.btnSalvareClient.Size = new System.Drawing.Size(389, 48);
+            this.btnSalvareClient.Size = new System.Drawing.Size(471, 48);
             this.btnSalvareClient.TabIndex = 6;
             this.btnSalvareClient.Text = "Salveaza";
             this.btnSalvareClient.UseVisualStyleBackColor = true;
@@ -202,17 +202,6 @@ namespace AbonatiTelefonici
             this.labelPlata.TabIndex = 14;
             this.labelPlata.Text = "Metoda de plata";
             // 
-            // buttonBack
-            // 
-            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Location = new System.Drawing.Point(576, 461);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(195, 63);
-            this.buttonBack.TabIndex = 40;
-            this.buttonBack.Text = "BACK";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // labelEmail
             // 
             this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -231,14 +220,23 @@ namespace AbonatiTelefonici
             this.tbEmail.Size = new System.Drawing.Size(389, 22);
             this.tbEmail.TabIndex = 41;
             // 
+            // backButton2
+            // 
+            this.backButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton2.Location = new System.Drawing.Point(634, 527);
+            this.backButton2.Name = "backButton2";
+            this.backButton2.Size = new System.Drawing.Size(219, 60);
+            this.backButton2.TabIndex = 48;
+            this.backButton2.Load += new System.EventHandler(this.backButton2_Load);
+            // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 536);
+            this.ClientSize = new System.Drawing.Size(865, 599);
+            this.Controls.Add(this.backButton2);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.labelPlata);
             this.Controls.Add(this.cbPlata);
             this.Controls.Add(this.labelTitlu);
@@ -280,9 +278,9 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Label labelTitlu;
         private System.Windows.Forms.Label labelPlata;
         private System.Windows.Forms.ComboBox cbPlata;
-        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox tbEmail;
+        private User_Library.BackButton backButton2;
     }
 }
 

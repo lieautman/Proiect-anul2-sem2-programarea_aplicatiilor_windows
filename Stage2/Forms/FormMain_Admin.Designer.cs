@@ -41,6 +41,8 @@ namespace AbonatiTelefonici
             this.abonamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extraOptiuniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipAbonamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arataLogFileAngajatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backButton1 = new User_Library.BackButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +106,8 @@ namespace AbonatiTelefonici
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.displayBazaDeDateToolStripMenuItem});
+            this.displayBazaDeDateToolStripMenuItem,
+            this.arataLogFileAngajatiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1432, 28);
@@ -119,8 +122,8 @@ namespace AbonatiTelefonici
             this.extraOptiuniToolStripMenuItem,
             this.tipAbonamentToolStripMenuItem});
             this.displayBazaDeDateToolStripMenuItem.Name = "displayBazaDeDateToolStripMenuItem";
-            this.displayBazaDeDateToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
-            this.displayBazaDeDateToolStripMenuItem.Text = "Display Baza de date";
+            this.displayBazaDeDateToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.displayBazaDeDateToolStripMenuItem.Text = "Arata Baza de date";
             // 
             // clientToolStripMenuItem
             // 
@@ -150,12 +153,28 @@ namespace AbonatiTelefonici
             this.tipAbonamentToolStripMenuItem.Text = "Tip abonament";
             this.tipAbonamentToolStripMenuItem.Click += new System.EventHandler(this.tipAbonamentToolStripMenuItem_Click);
             // 
+            // arataLogFileAngajatiToolStripMenuItem
+            // 
+            this.arataLogFileAngajatiToolStripMenuItem.Name = "arataLogFileAngajatiToolStripMenuItem";
+            this.arataLogFileAngajatiToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.arataLogFileAngajatiToolStripMenuItem.Text = "Arata Log File Angajati";
+            this.arataLogFileAngajatiToolStripMenuItem.Click += new System.EventHandler(this.arataLogFileAngajatiToolStripMenuItem_Click);
+            // 
+            // backButton1
+            // 
+            this.backButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton1.Location = new System.Drawing.Point(1239, 541);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(181, 52);
+            this.backButton1.TabIndex = 7;
+            // 
             // FormMain_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1432, 605);
+            this.Controls.Add(this.backButton1);
             this.Controls.Add(this.btnTipAbonament);
             this.Controls.Add(this.btnExtraOptiuni);
             this.Controls.Add(this.btnAbonament);
@@ -187,5 +206,7 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.ToolStripMenuItem abonamentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem extraOptiuniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipAbonamentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arataLogFileAngajatiToolStripMenuItem;
+        private User_Library.BackButton backButton1;
     }
 }

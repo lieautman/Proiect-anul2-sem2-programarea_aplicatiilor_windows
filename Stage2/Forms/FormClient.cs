@@ -16,6 +16,7 @@ namespace AbonatiTelefonici
     public partial class FormClient : Form
     {
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
+        string logFile = Directory.GetCurrentDirectory() + "/LogAngajati.dat";
         Angajat angajat_local;
         public FormClient(Angajat angajat)
         {
@@ -69,6 +70,11 @@ namespace AbonatiTelefonici
                     {
                         writetext.WriteLine(client.ToString());
                     }
+                    //de scris in log
+                    using (StreamWriter writetext = new StreamWriter(logFile, true))
+                    {
+                        writetext.WriteLine(angajat_local.ToString() + " 0 " + client.NrOrdine);//0 reprezinta modelul de formular ce a fost logat
+                    }
 
                     MessageBox.Show("Clientul a fost salvat!");
 
@@ -92,9 +98,9 @@ namespace AbonatiTelefonici
             }
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void backButton2_Load(object sender, EventArgs e)
         {
-            this.Close();
+            ((Control)sender).Parent = this;
         }
     }
 }

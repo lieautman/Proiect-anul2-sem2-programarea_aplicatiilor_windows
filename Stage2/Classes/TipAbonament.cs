@@ -39,5 +39,11 @@ namespace AbonatiTelefonici
             lta.Add(ta);
             return lta;
         }
+        //mi-ar trebuii pt a updata datele dar nu am putut sa fac asta
+        public static List<TipAbonament> operator -(List<TipAbonament> lta, TipAbonament ta)
+        {
+            lta.Remove(ta);
+            return lta;
+        }
     }
 }

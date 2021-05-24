@@ -42,13 +42,13 @@ namespace AbonatiTelefonici
             this.tbNrOrdineExtraoptiune = new System.Windows.Forms.TextBox();
             this.epNecompletat = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbNrOrdineAbonament = new System.Windows.Forms.ComboBox();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.dgvBdAbonament = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBdClienti = new System.Windows.Forms.DataGridView();
             this.labelTipAbonamentBD = new System.Windows.Forms.Label();
             this.dgvBdTipAbonament = new System.Windows.Forms.DataGridView();
+            this.backButton2 = new User_Library.BackButton();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdAbonament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdClienti)).BeginInit();
@@ -160,17 +160,6 @@ namespace AbonatiTelefonici
             this.cbNrOrdineAbonament.Size = new System.Drawing.Size(214, 24);
             this.cbNrOrdineAbonament.TabIndex = 1;
             // 
-            // buttonBack
-            // 
-            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Location = new System.Drawing.Point(1134, 696);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(167, 66);
-            this.buttonBack.TabIndex = 40;
-            this.buttonBack.Text = "BACK";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // dgvBdAbonament
             // 
             this.dgvBdAbonament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -181,8 +170,9 @@ namespace AbonatiTelefonici
             this.dgvBdAbonament.RowHeadersWidth = 51;
             this.dgvBdAbonament.RowTemplate.Height = 24;
             this.dgvBdAbonament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdAbonament.Size = new System.Drawing.Size(811, 189);
+            this.dgvBdAbonament.Size = new System.Drawing.Size(820, 189);
             this.dgvBdAbonament.TabIndex = 41;
+            this.dgvBdAbonament.DoubleClick += new System.EventHandler(this.dgvBdAbonament_DoubleClick);
             // 
             // label5
             // 
@@ -212,7 +202,7 @@ namespace AbonatiTelefonici
             this.dgvBdClienti.RowHeadersWidth = 51;
             this.dgvBdClienti.RowTemplate.Height = 24;
             this.dgvBdClienti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdClienti.Size = new System.Drawing.Size(811, 194);
+            this.dgvBdClienti.Size = new System.Drawing.Size(820, 194);
             this.dgvBdClienti.TabIndex = 44;
             // 
             // labelTipAbonamentBD
@@ -234,21 +224,30 @@ namespace AbonatiTelefonici
             this.dgvBdTipAbonament.RowHeadersWidth = 51;
             this.dgvBdTipAbonament.RowTemplate.Height = 24;
             this.dgvBdTipAbonament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdTipAbonament.Size = new System.Drawing.Size(811, 194);
+            this.dgvBdTipAbonament.Size = new System.Drawing.Size(820, 194);
             this.dgvBdTipAbonament.TabIndex = 45;
+            // 
+            // backButton2
+            // 
+            this.backButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton2.Location = new System.Drawing.Point(1074, 720);
+            this.backButton2.Name = "backButton2";
+            this.backButton2.Size = new System.Drawing.Size(219, 60);
+            this.backButton2.TabIndex = 47;
+            this.backButton2.Load += new System.EventHandler(this.backButton2_Load);
             // 
             // FormExtraOptiuni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1313, 774);
+            this.ClientSize = new System.Drawing.Size(1322, 792);
+            this.Controls.Add(this.backButton2);
             this.Controls.Add(this.labelTipAbonamentBD);
             this.Controls.Add(this.dgvBdTipAbonament);
             this.Controls.Add(this.dgvBdClienti);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvBdAbonament);
-            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.cbNrOrdineAbonament);
             this.Controls.Add(this.tbNrOrdineExtraoptiune);
             this.Controls.Add(this.label4);
@@ -285,12 +284,12 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.TextBox tbNrOrdineExtraoptiune;
         private System.Windows.Forms.ErrorProvider epNecompletat;
         private System.Windows.Forms.ComboBox cbNrOrdineAbonament;
-        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.DataGridView dgvBdAbonament;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvBdClienti;
         private System.Windows.Forms.Label labelTipAbonamentBD;
         private System.Windows.Forms.DataGridView dgvBdTipAbonament;
+        private User_Library.BackButton backButton2;
     }
 }

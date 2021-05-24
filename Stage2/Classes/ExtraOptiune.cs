@@ -46,7 +46,12 @@ namespace AbonatiTelefonici
             leo.Add(eo);
             return leo;
         }
-
+        //mi-ar trebuii pt a updata datele dar nu am putut sa fac asta
+        public static List<ExtraOptiune> operator -(List<ExtraOptiune> leo, ExtraOptiune eo)
+        {
+            leo.Remove(eo);
+            return leo;
+        }
         public ExtraOptiuneTip stringtoenum(string s)
         {
             if (s.Contains("Mesaje"))

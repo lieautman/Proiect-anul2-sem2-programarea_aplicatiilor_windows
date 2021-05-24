@@ -12,15 +12,15 @@ namespace AbonatiTelefonici
         Manager,
         Admin
     }
-    public class Angajat:Persoana,ICloneable
+    public class Angajat : Persoana, ICloneable
     {
         public string username { get; set; }
         public TipUser tipUser { get; set; }
 
-        TipUser stringToEnum(string s)
+        public void stringToEnum(string s)
         {
             TipUser buffer = (TipUser)Enum.Parse(typeof(TipUser), s);
-            return buffer;
+            this.tipUser = buffer;
         }
 
         public Angajat() : base()
@@ -28,25 +28,28 @@ namespace AbonatiTelefonici
             username = "";
             tipUser = 0;
         }
-        public Angajat(Persoana p)
+        public Angajat(string nume, string prenume, string email)
         {
-            this.nume = p.nume;
-            this.prenume = p.prenume;
-            this.email = p.email;
+            this.nume = nume;
+            this.prenume = prenume;
+            this.email = email;
         }
         public Angajat(string nume, string prenume, string email, string username, string tipUser) : base(nume, prenume, email)
         {
             this.username = username;
-            this.tipUser = stringToEnum(tipUser);
+            this.stringToEnum(tipUser);
         }
         public override string ToString()
         {
             return this.username + " " + this.tipUser + " " + this.nume + " " + this.prenume + " " + this.email;
         }
 
-        public new object Clone()
+        public object Clone()
         {
-            Angajat clona = new Angajat((Persoana)base.Clone());
+            Angajat clona = new Angajat();
+            clona.nume = this.nume;
+            clona.prenume = this.prenume;
+            clona.email = this.email;
             clona.username = this.username;
             clona.tipUser = this.tipUser;
             return clona;

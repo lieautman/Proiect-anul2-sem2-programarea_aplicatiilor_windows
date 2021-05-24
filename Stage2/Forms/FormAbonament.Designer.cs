@@ -44,7 +44,7 @@ namespace AbonatiTelefonici
             this.labelTipAbonamentBD = new System.Windows.Forms.Label();
             this.dgvBdClienti = new System.Windows.Forms.DataGridView();
             this.labelClientiBD = new System.Windows.Forms.Label();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.backButton2 = new User_Library.BackButton();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdTipAbonament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdClienti)).BeginInit();
@@ -148,7 +148,7 @@ namespace AbonatiTelefonici
             this.dgvBdTipAbonament.RowHeadersWidth = 51;
             this.dgvBdTipAbonament.RowTemplate.Height = 24;
             this.dgvBdTipAbonament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdTipAbonament.Size = new System.Drawing.Size(954, 325);
+            this.dgvBdTipAbonament.Size = new System.Drawing.Size(958, 325);
             this.dgvBdTipAbonament.TabIndex = 28;
             this.dgvBdTipAbonament.DoubleClick += new System.EventHandler(this.dgvBdAbonament_DoubleClick);
             // 
@@ -171,7 +171,7 @@ namespace AbonatiTelefonici
             this.dgvBdClienti.RowHeadersWidth = 51;
             this.dgvBdClienti.RowTemplate.Height = 24;
             this.dgvBdClienti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdClienti.Size = new System.Drawing.Size(954, 325);
+            this.dgvBdClienti.Size = new System.Drawing.Size(958, 325);
             this.dgvBdClienti.TabIndex = 30;
             this.dgvBdClienti.DoubleClick += new System.EventHandler(this.dgvBdClienti_DoubleClick);
             // 
@@ -184,24 +184,22 @@ namespace AbonatiTelefonici
             this.labelClientiBD.TabIndex = 31;
             this.labelClientiBD.Text = "Baza de date clienti";
             // 
-            // buttonBack
+            // backButton2
             // 
-            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Location = new System.Drawing.Point(1087, 716);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(399, 84);
-            this.buttonBack.TabIndex = 40;
-            this.buttonBack.Text = "BACK";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.backButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton2.Location = new System.Drawing.Point(1271, 746);
+            this.backButton2.Name = "backButton2";
+            this.backButton2.Size = new System.Drawing.Size(219, 60);
+            this.backButton2.TabIndex = 49;
+            this.backButton2.Load += new System.EventHandler(this.backButton2_Load);
             // 
             // FormAbonament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1514, 809);
-            this.Controls.Add(this.buttonBack);
+            this.ClientSize = new System.Drawing.Size(1518, 818);
+            this.Controls.Add(this.backButton2);
             this.Controls.Add(this.labelClientiBD);
             this.Controls.Add(this.dgvBdClienti);
             this.Controls.Add(this.labelTipAbonamentBD);
@@ -241,6 +239,6 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Label labelTipAbonamentBD;
         private System.Windows.Forms.Label labelClientiBD;
         private System.Windows.Forms.DataGridView dgvBdClienti;
-        private System.Windows.Forms.Button buttonBack;
+        private User_Library.BackButton backButton2;
     }
 }

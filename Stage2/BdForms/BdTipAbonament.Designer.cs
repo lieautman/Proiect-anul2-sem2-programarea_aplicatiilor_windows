@@ -30,39 +30,39 @@ namespace AbonatiTelefonici
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BdTipAbonament));
-            this.dgvBdAbonament = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBdAbonament)).BeginInit();
+            this.dgvBdTipAbonament = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBdTipAbonament)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvBdAbonament
+            // dgvBdTipAbonament
             // 
-            this.dgvBdAbonament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBdAbonament.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBdAbonament.Location = new System.Drawing.Point(0, 0);
-            this.dgvBdAbonament.Name = "dgvBdAbonament";
-            this.dgvBdAbonament.RowHeadersWidth = 51;
-            this.dgvBdAbonament.RowTemplate.Height = 24;
-            this.dgvBdAbonament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBdAbonament.Size = new System.Drawing.Size(800, 450);
-            this.dgvBdAbonament.TabIndex = 18;
+            this.dgvBdTipAbonament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBdTipAbonament.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBdTipAbonament.Location = new System.Drawing.Point(0, 0);
+            this.dgvBdTipAbonament.Name = "dgvBdTipAbonament";
+            this.dgvBdTipAbonament.RowHeadersWidth = 51;
+            this.dgvBdTipAbonament.RowTemplate.Height = 24;
+            this.dgvBdTipAbonament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBdTipAbonament.Size = new System.Drawing.Size(800, 450);
+            this.dgvBdTipAbonament.TabIndex = 18;
             // 
             // BdTipAbonament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvBdAbonament);
+            this.Controls.Add(this.dgvBdTipAbonament);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BdTipAbonament";
             this.Text = "BdTipAbonament";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBdAbonament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBdTipAbonament)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvBdAbonament;
+        private System.Windows.Forms.DataGridView dgvBdTipAbonament;
     }
 }

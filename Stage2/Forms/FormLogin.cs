@@ -82,6 +82,7 @@ namespace AbonatiTelefonici
                                                     reader["tip"].ToString());
                     if(reader["tip"].ToString() == "0")
                     {
+                        conexiune.Close();
                         FormMain_Client frm = new FormMain_Client(angajat);
                         this.Hide();
                         frm.ShowDialog();
@@ -91,6 +92,7 @@ namespace AbonatiTelefonici
                     }
                     if(reader["tip"].ToString() == "1")
                     {
+                        conexiune.Close();
                         FormMain_Manager frm = new FormMain_Manager(angajat);
                         this.Hide();
                         frm.ShowDialog();
@@ -100,6 +102,7 @@ namespace AbonatiTelefonici
                     }
                     if (reader["tip"].ToString() == "2")
                     {
+                        conexiune.Close();
                         FormMain_Admin frm = new FormMain_Admin(angajat);
                         this.Hide();
                         frm.ShowDialog();
@@ -122,7 +125,8 @@ namespace AbonatiTelefonici
             }
             finally
             {
-                conexiune.Close();
+                if(conexiune.State==ConnectionState.Open)
+                    conexiune.Close();
             }
         }
 

@@ -14,6 +14,7 @@ namespace AbonatiTelefonici
     public partial class FormTipAbonament : Form
     {
         string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
+        string logFile = Directory.GetCurrentDirectory() + "/LogAngajati.dat";
         Angajat angajat_local;
         public FormTipAbonament(Angajat angajat)
         {
@@ -63,6 +64,11 @@ namespace AbonatiTelefonici
                     {
                         writetext.WriteLine(tipAbonament.ToString());
                     }
+                    //de scris in log
+                    using (StreamWriter writetext = new StreamWriter(logFile, true))
+                    {
+                        writetext.WriteLine(angajat_local.ToString() + " 3 " + tipAbonament.NrOrdineTipAbonament);//3 reprezinta modelul de formular ce a fost logat
+                    }
 
                     MessageBox.Show("Tipul de abonamnet a fost salvat!");
 
@@ -86,9 +92,14 @@ namespace AbonatiTelefonici
             }
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void backButton2_Load(object sender, EventArgs e)
+        {
+            ((Control)sender).Parent = this;
         }
     }
 }

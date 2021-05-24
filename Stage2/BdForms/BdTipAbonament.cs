@@ -42,7 +42,7 @@ namespace AbonatiTelefonici
                     }
 
                     //afisam datele in tabel
-                    dgvBdAbonament.DataSource = listTipAbonament;
+                    dgvBdTipAbonament.DataSource = listTipAbonament;
                 }
             }
             else

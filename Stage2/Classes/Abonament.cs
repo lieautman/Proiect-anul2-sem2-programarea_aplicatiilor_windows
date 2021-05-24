@@ -36,7 +36,12 @@ namespace AbonatiTelefonici
             la.Add(a);
             return la;
         }
-
+        //mi-ar trebuii pt a updata datele dar nu am putut sa fac asta
+        public static List<Abonament> operator -(List<Abonament> la, Abonament a)
+        {
+            la.Remove(a);
+            return la;
+        }
         public int stringtoint(string s)
         {
             int a = Convert.ToInt32(s);

@@ -41,6 +41,7 @@ namespace AbonatiTelefonici
             this.btnAbonament = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClient = new System.Windows.Forms.Button();
+            this.backButton1 = new User_Library.BackButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,12 +151,21 @@ namespace AbonatiTelefonici
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
+            // backButton1
+            // 
+            this.backButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton1.Location = new System.Drawing.Point(1394, 644);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(181, 52);
+            this.backButton1.TabIndex = 12;
+            // 
             // FormMain_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1587, 708);
+            this.Controls.Add(this.backButton1);
             this.Controls.Add(this.btnTipAbonament);
             this.Controls.Add(this.btnExtraOptiuni);
             this.Controls.Add(this.btnAbonament);
@@ -186,5 +196,6 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Button btnAbonament;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClient;
+        private User_Library.BackButton backButton1;
     }
 }

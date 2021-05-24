@@ -18,6 +18,7 @@ namespace AbonatiTelefonici
         string clientPath = Directory.GetCurrentDirectory() + "/ClientiDB.dat";
         string abonamentPath = Directory.GetCurrentDirectory() + "/AbonamenteDB.dat";
         string tipAbonamentPath = Directory.GetCurrentDirectory() + "/TipAbonamentDB.dat";
+        string logFile = Directory.GetCurrentDirectory() + "/LogAngajati.dat";
         Angajat angajat_local;
         public FormAbonament(Angajat angajat)
         {
@@ -181,10 +182,10 @@ namespace AbonatiTelefonici
             {
                 try
                 {
-                    Abonament Abonament = new Abonament();
-                    Abonament.NrOrdineAbonament = Convert.ToInt32(tbNrOrdineAbonament.Text);
-                    Abonament.NrOrdineClient = Convert.ToInt32(cbNrOrdineClient.Text);
-                    Abonament.AbonamentTip = Abonament.stringtoint(cbTipAbonament.Text);
+                    Abonament abonament = new Abonament();
+                    abonament.NrOrdineAbonament = Convert.ToInt32(tbNrOrdineAbonament.Text);
+                    abonament.NrOrdineClient = Convert.ToInt32(cbNrOrdineClient.Text);
+                    abonament.AbonamentTip = abonament.stringtoint(cbTipAbonament.Text);
 
 
 
@@ -192,7 +193,12 @@ namespace AbonatiTelefonici
                     //de scris in fisier
                     using (StreamWriter writetext = new StreamWriter(abonamentPath, true))
                     {
-                        writetext.WriteLine(Abonament.ToString());
+                        writetext.WriteLine(abonament.ToString());
+                    }
+                    //de scris in log
+                    using (StreamWriter writetext = new StreamWriter(logFile, true))
+                    {
+                        writetext.WriteLine(angajat_local.ToString() + " 2 " + abonament.NrOrdineAbonament);//1 reprezinta modelul de formular ce a fost logat
                     }
 
                     MessageBox.Show("Abonamentul clientului cu id-ul " + cbNrOrdineClient.Text + " a fost salvat!");
@@ -223,7 +229,6 @@ namespace AbonatiTelefonici
                 cbTipAbonament.Text = row.Cells[0].Value.ToString();
             }
         }
-
         private void dgvBdClienti_DoubleClick(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvBdClienti.SelectedRows)
@@ -231,10 +236,14 @@ namespace AbonatiTelefonici
                 cbNrOrdineClient.Text = row.Cells[0].Value.ToString();
             }
         }
-
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void backButton2_Load(object sender, EventArgs e)
+        {
+            ((Control)sender).Parent = this;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbonatiTelefonici
 {
-    public class Persoana:ICloneable
+    public abstract class Persoana
     {
         public string nume { get; set; }
         public string prenume { get; set; }
@@ -27,15 +27,6 @@ namespace AbonatiTelefonici
         public override string ToString()
         {
             return this.nume + " " + this.prenume + " " + this.email;
-        }
-
-        public object Clone()
-        {
-            Persoana clona = null;
-            clona.nume = this.nume;
-            clona.prenume = this.prenume;
-            clona.email = this.email;
-            return clona;
         }
     }
 }

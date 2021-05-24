@@ -12,14 +12,16 @@ namespace AbonatiTelefonici
 {
     public partial class FormMain : Form
     {
-        public FormMain()
+        Angajat angajat_local;
+        public FormMain(Angajat angajat)
         {
             InitializeComponent();
+            angajat_local = (Angajat)angajat.Clone();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            FormClient frm = new FormClient();
+            FormClient frm = new FormClient(angajat_local);
             this.Hide();
             frm.ShowDialog();
             this.Show();
@@ -27,7 +29,7 @@ namespace AbonatiTelefonici
 
         private void btnAbonament_Click(object sender, EventArgs e)
         {
-            FormAbonament frm = new FormAbonament();
+            FormAbonament frm = new FormAbonament(angajat_local);
             this.Hide();
             frm.ShowDialog();
             this.Show();
@@ -35,7 +37,7 @@ namespace AbonatiTelefonici
 
         private void btnExtraOptiuni_Click(object sender, EventArgs e)
         {
-            FormExtraOptiuni frm = new FormExtraOptiuni();
+            FormExtraOptiuni frm = new FormExtraOptiuni(angajat_local);
             this.Hide();
             frm.ShowDialog();
             this.Show();
@@ -43,7 +45,7 @@ namespace AbonatiTelefonici
 
         private void btnTipAbonament_Click(object sender, EventArgs e)
         {
-            FormTipAbonament frm = new FormTipAbonament();
+            FormTipAbonament frm = new FormTipAbonament(angajat_local);
             this.Hide();
             frm.ShowDialog();
             this.Show();

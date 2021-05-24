@@ -44,7 +44,7 @@ namespace AbonatiTelefonici
             this.btnSalvareTipAbonament = new System.Windows.Forms.Button();
             this.labelPretLunar = new System.Windows.Forms.Label();
             this.tbPretLunar = new System.Windows.Forms.TextBox();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.backButton2 = new User_Library.BackButton();
             ((System.ComponentModel.ISupportInitialize)(this.epNecompletat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@ namespace AbonatiTelefonici
             this.tbNrTipAbonament.Location = new System.Drawing.Point(295, 94);
             this.tbNrTipAbonament.Name = "tbNrTipAbonament";
             this.tbNrTipAbonament.ReadOnly = true;
-            this.tbNrTipAbonament.Size = new System.Drawing.Size(131, 22);
+            this.tbNrTipAbonament.Size = new System.Drawing.Size(404, 22);
             this.tbNrTipAbonament.TabIndex = 29;
             // 
             // labelNrMesaje
@@ -123,7 +123,7 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNrMesaje.Location = new System.Drawing.Point(295, 146);
             this.tbNrMesaje.Name = "tbNrMesaje";
-            this.tbNrMesaje.Size = new System.Drawing.Size(131, 22);
+            this.tbNrMesaje.Size = new System.Drawing.Size(404, 22);
             this.tbNrMesaje.TabIndex = 33;
             // 
             // tbNrMinute
@@ -132,7 +132,7 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNrMinute.Location = new System.Drawing.Point(295, 195);
             this.tbNrMinute.Name = "tbNrMinute";
-            this.tbNrMinute.Size = new System.Drawing.Size(131, 22);
+            this.tbNrMinute.Size = new System.Drawing.Size(404, 22);
             this.tbNrMinute.TabIndex = 34;
             // 
             // tbNrGbInternet
@@ -141,7 +141,7 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNrGbInternet.Location = new System.Drawing.Point(295, 246);
             this.tbNrGbInternet.Name = "tbNrGbInternet";
-            this.tbNrGbInternet.Size = new System.Drawing.Size(131, 22);
+            this.tbNrGbInternet.Size = new System.Drawing.Size(404, 22);
             this.tbNrGbInternet.TabIndex = 35;
             // 
             // btnSalvareTipAbonament
@@ -150,7 +150,7 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvareTipAbonament.Location = new System.Drawing.Point(156, 349);
             this.btnSalvareTipAbonament.Name = "btnSalvareTipAbonament";
-            this.btnSalvareTipAbonament.Size = new System.Drawing.Size(148, 29);
+            this.btnSalvareTipAbonament.Size = new System.Drawing.Size(421, 29);
             this.btnSalvareTipAbonament.TabIndex = 36;
             this.btnSalvareTipAbonament.Text = "Salveaza";
             this.btnSalvareTipAbonament.UseVisualStyleBackColor = true;
@@ -173,26 +173,24 @@ namespace AbonatiTelefonici
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPretLunar.Location = new System.Drawing.Point(295, 297);
             this.tbPretLunar.Name = "tbPretLunar";
-            this.tbPretLunar.Size = new System.Drawing.Size(131, 22);
+            this.tbPretLunar.Size = new System.Drawing.Size(404, 22);
             this.tbPretLunar.TabIndex = 38;
             // 
-            // buttonBack
+            // backButton2
             // 
-            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Location = new System.Drawing.Point(395, 370);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(184, 65);
-            this.buttonBack.TabIndex = 39;
-            this.buttonBack.Text = "BACK";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.backButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backButton2.Location = new System.Drawing.Point(633, 512);
+            this.backButton2.Name = "backButton2";
+            this.backButton2.Size = new System.Drawing.Size(219, 60);
+            this.backButton2.TabIndex = 39;
+            this.backButton2.Load += new System.EventHandler(this.backButton2_Load);
             // 
             // FormTipAbonament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 447);
-            this.Controls.Add(this.buttonBack);
+            this.ClientSize = new System.Drawing.Size(864, 584);
+            this.Controls.Add(this.backButton2);
             this.Controls.Add(this.tbPretLunar);
             this.Controls.Add(this.labelPretLunar);
             this.Controls.Add(this.btnSalvareTipAbonament);
@@ -230,6 +228,7 @@ namespace AbonatiTelefonici
         private System.Windows.Forms.Button btnSalvareTipAbonament;
         private System.Windows.Forms.TextBox tbPretLunar;
         private System.Windows.Forms.Label labelPretLunar;
-        private System.Windows.Forms.Button buttonBack;
+        private User_Library.BackButton backButton1;
+        private User_Library.BackButton backButton2;
     }
 }

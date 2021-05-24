@@ -82,5 +82,13 @@ namespace AbonatiTelefonici
             frm.ShowDialog();
             this.Show();
         }
+
+        private void arataLogFileAngajatiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BdLogFiles frm = new BdLogFiles();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
